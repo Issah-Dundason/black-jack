@@ -90,6 +90,7 @@ button {
     height: 50px;
     margin-top: 15px;
     margin-left: 5px;
+    transition: all 0.8s ease;
 }
 
 
