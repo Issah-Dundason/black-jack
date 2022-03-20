@@ -20,37 +20,39 @@ let motivations = ["You can do it", "You are getting there", "Take a Hit", "Hit!
 
 function onPlayButton() {
 
-    if(isPlayable) {
-        let firstCard = generateNumber();
-        let secondCard = generateNumber();
-        let sum = firstCard + secondCard;
-
-        result += sum;
-
-
-        resultField.textContent = result;
-
-        checkResult();
-        console.log(resultState);
-
-        if(resultState === "victory") {
-            restartButton.classList.remove("disabled");
-            resultCard.classList.add("show");
-            motivationField.textContent = "You lost! \n" + result;
-            resultCard.style.backgroundImage = "url('./images/won.jpg')";
-        }
-
-
-        if(resultState === "canPlay") {
-            addButton.classList.remove("disabled");
-            displayMotivation();
-        }
-
-
-        playButton.classList.add("disabled");
-        isPlayable = false;
-
+    if(!isPlayable) {
+       return ;
     }
+
+    let firstCard = generateNumber();
+    let secondCard = generateNumber();
+    let sum = firstCard + secondCard;
+
+    result += sum;
+
+
+    resultField.textContent = result;
+
+    checkResult();
+    console.log(resultState);
+
+    if(resultState === "victory") {
+        felt.classList.add("hide");
+        restartButton.classList.remove("disabled");
+        resultCard.classList.add("show");
+        motivationField.textContent = "You lost! \n" + result;
+        resultCard.style.backgroundImage = "url('./images/won.jpg')";
+    }
+
+
+    if(resultState === "canPlay") {
+        addButton.classList.remove("disabled");
+        displayMotivation();
+    }
+
+
+    playButton.classList.add("disabled");
+    isPlayable = false;
 
 }
 
@@ -121,6 +123,7 @@ function checkResult() {
         resultState = resultStates[0];
         return;
     }
+
 
     if(result > 21) {
         console.log("You Lost");
