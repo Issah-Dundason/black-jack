@@ -94,8 +94,7 @@ button {
 
 
 button:hover {
-    padding: 6px;
-    font-size: 10px;
+    padding: 4px;
 }
 
 
@@ -107,7 +106,6 @@ button:hover {
 
 .disabled:hover {
     padding: 5px;
-    font-size: 22px;
 }
 
 #motivation_text {
