@@ -40,7 +40,7 @@ function onPlayButton() {
         felt.classList.add("hide");
         restartButton.classList.remove("disabled");
         resultCard.classList.add("show");
-        motivationField.textContent = "You lost! \n" + result;
+        motivationField.textContent = "You won! \n" + result;
         resultCard.style.backgroundImage = "url('./images/won.jpg')";
     }
 
